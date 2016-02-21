@@ -40,13 +40,13 @@ public class Calculator {
 	}
 	
 	/**
-	 * 	Subtract an inputer number from the result
+	 * 	Subtract an inputer number from the total variable
 	 * 
-	 * 	@param value integer the minuend
+	 * 	@param value integer the subtrahend
 	 */
 	
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	
 	/**
