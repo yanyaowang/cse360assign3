@@ -30,13 +30,13 @@ public class Calculator {
 	}
 	
 	/**
-	 * 	Add an inputer number into the result
+	 * 	Add an inputer number into the total variable
 	 * 
 	 * 	@param value integer the adding number
 	 */
 	
 	public void add (int value) {
-		
+		total += value;
 	}
 	
 	/**
