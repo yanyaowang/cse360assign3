@@ -60,13 +60,16 @@ public class Calculator {
 	}
 	
 	/**
-	 * 	divide the result by an inputer number
+	 * 	divide the total variable by an inputer number
 	 * 
 	 * 	@param value integer the dividend
 	 */
 	
 	public void divide (int value) {
-		
+		if(value == 0)
+			total = 0;
+		else
+			total = total / value;
 	}
 	
 	/**
