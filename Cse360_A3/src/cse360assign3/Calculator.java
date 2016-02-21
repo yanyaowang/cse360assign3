@@ -50,13 +50,13 @@ public class Calculator {
 	}
 	
 	/**
-	 * 	Multiply the result by an inputer number
+	 * 	Multiply the total variable by the total variable by the input number
 	 * 
 	 * 	@param value integer the multiplier
 	 */
 	
 	public void multiply (int value) {
-		
+		total = total * total * value;
 	}
 	
 	/**
