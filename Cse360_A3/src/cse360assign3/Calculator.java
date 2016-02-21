@@ -20,13 +20,13 @@ public class Calculator {
 	}
 	
 	/**
-	 * 	Show the result after calculation
+	 * 	Show the value of total variable
 	 * 
 	 * 	@return integer final result 
 	 */
 	
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
