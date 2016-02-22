@@ -10,6 +10,8 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private boolean doCalculate;
+	private String history;
 	
 	/**
 	 * 	Create a calculator and set the result to be zero by default.
@@ -17,6 +19,8 @@ public class Calculator {
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		doCalculate = false;
+		history = "";
 	}
 	
 	/**
@@ -37,6 +41,14 @@ public class Calculator {
 	
 	public void add (int value) {
 		total += value;
+		
+		if(doCalculate)
+			history = history + " + " + value;
+		else
+		{
+			history = "0 + " + value;
+			doCalculate = true;
+		}	
 	}
 	
 	/**
@@ -47,6 +59,14 @@ public class Calculator {
 	
 	public void subtract (int value) {
 		total = total - value;
+		
+		if(doCalculate)
+			history = history + " - " + value;
+		else
+		{
+			history = "0 - " + value;
+			doCalculate = true;
+		}	
 	}
 	
 	/**
@@ -57,6 +77,14 @@ public class Calculator {
 	
 	public void multiply (int value) {
 		total = total * total * value;
+		
+		if(doCalculate)
+			history = history + " * " + value;
+		else
+		{
+			history = "0 * " + value;
+			doCalculate = true;
+		}	
 	}
 	
 	/**
@@ -67,9 +95,29 @@ public class Calculator {
 	
 	public void divide (int value) {
 		if(value == 0)
+		{
 			total = 0;
+			
+			if(doCalculate)
+				history = history + " / " + value;
+			else
+			{
+				history = "0 / " + value;
+				doCalculate = true;
+			}	
+		}
 		else
+		{
 			total = total / value;
+			
+			if(doCalculate)
+				history = history + " / " + value;
+			else
+			{
+				history = "0 / " + value;
+				doCalculate = true;
+			}	
+		}
 	}
 	
 	/**
@@ -79,6 +127,7 @@ public class Calculator {
 	 */
 	
 	public String getHistory () {
-		return "";
+		
+		return history;
 	}
 }

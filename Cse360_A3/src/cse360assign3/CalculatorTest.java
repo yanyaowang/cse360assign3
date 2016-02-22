@@ -10,19 +10,19 @@ public class CalculatorTest {
 		Calculator c = new Calculator();
 		
 		assertNotNull("The Calculator is NULL", c);
+		assertEquals(c.getHistory(), "");
 	}
 
 	@Test
 	public void testGetTotal() {
-		//fail("Not yet implemented");
 		Calculator c = new Calculator();
 		
 		assertEquals(c.getTotal(), 0);
+		assertEquals(c.getHistory(), "");
 	}
 
 	@Test
 	public void testAdd() {
-		//fail("Not yet implemented");
 		Calculator c = new Calculator();
 		
 		c.add(5);
@@ -41,8 +41,8 @@ public class CalculatorTest {
 		assertEquals(c.getTotal(), 2);
 		
 		c.add(5);
-		c.subtract(3);
-		assertEquals(c.getTotal(), 4);
+		c.subtract(1);
+		assertEquals(c.getTotal(), 6);
 	}
 
 	@Test
@@ -74,7 +74,18 @@ public class CalculatorTest {
 
 	@Test
 	public void testGetHistory() {
-		fail("Not yet implemented");
+		Calculator c = new Calculator();
+
+		c.divide(0);
+		c.divide(9);
+		c.add(15);
+		c.divide(22);
+		c.add(15);
+		c.subtract(3);
+		c.multiply(6);
+		c.subtract(3);
+		c.divide(9);
+		assertEquals(c.getHistory(), "0 / 0 / 9 + 15 / 22 + 15 - 3 * 6 - 3 / 9");
 	}
 
 }
